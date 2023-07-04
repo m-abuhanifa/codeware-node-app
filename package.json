@@ -1,0 +1,7 @@
+{
+  "name": "codeware-node-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mohammed Abu Hanifa",
+  "license": "MIT"
+}
