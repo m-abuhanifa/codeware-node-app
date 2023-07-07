@@ -3,7 +3,7 @@ import mongoose, { Document, Schema, Types } from "mongoose";
 interface FolderType extends Document {
   name: string;
   parent: Types.ObjectId | null;
-  children: Types.ObjectId[];
+  children: Types.ObjectId[] | null;
 }
 
 const FolderSchema: Schema = new Schema({
