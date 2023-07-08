@@ -11,6 +11,15 @@ export const createOrders = async (req: Request, res: Response) => {
   }
 };
 
+export const getOrders = async (req: Request, res: Response) => {
+  try {
+    const order = await Order.find({}).populate("orderItems");
+    res.json(order);
+  } catch (error) {
+    res.json({ message: error });
+  }
+};
+
 export const createOrderItems = async (req: Request, res: Response) => {
   try {
     const orderItems = await OrderItems.create(req.body);
