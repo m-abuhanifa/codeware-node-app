@@ -1,16 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 
-interface OrderDocument extends OrderItems, Document {}
-
-const OrderItemsSchema = new Schema<OrderDocument>({
-  id: {
-    type: String,
-    required: true,
-  },
+const OrderItemsSchema = new Schema({
   products: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "Product",
+      product: String,
       required: true,
     },
   ],
@@ -20,9 +13,6 @@ const OrderItemsSchema = new Schema<OrderDocument>({
   },
 });
 
-const OrderItems = mongoose.model<OrderDocument>(
-  "OrderItems",
-  OrderItemsSchema
-);
+const OrderItems = mongoose.model("OrderItems", OrderItemsSchema);
 
 export default OrderItems;

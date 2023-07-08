@@ -7,10 +7,6 @@ const ProductSchema = new Schema<ProductDocument>({
     type: String,
     required: true,
   },
-  quantity: {
-    type: Number,
-    default: 1,
-  },
 });
 
 const Product = mongoose.model<ProductDocument>("Product", ProductSchema);

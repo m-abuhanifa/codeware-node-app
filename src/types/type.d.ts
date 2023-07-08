@@ -1,6 +1,5 @@
 interface Product {
   product: string;
-  quantity: number;
 }
 
 interface OrderItems {
