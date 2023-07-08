@@ -1,10 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 
-interface OrderItems {
-  id: string;
-  products: Product[];
-  quantity: number;
-}
 interface OrderDocument extends OrderItems, Document {}
 
 const OrderItemsSchema = new Schema<OrderDocument>({
