@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use("/api", folderRoute);
 
-app.use("/api/order/items", router);
+app.use("/api/order", router);
 
 //mongoDB connection
 

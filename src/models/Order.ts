@@ -1,8 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-interface OrderDocument extends Order, Document {}
-
-const OrderSchema = new Schema<OrderDocument>({
+const OrderSchema = new Schema({
   phone: {
     type: String,
   },
@@ -14,6 +12,6 @@ const OrderSchema = new Schema<OrderDocument>({
   ],
 });
 
-const Order = mongoose.model<OrderDocument>("Order", OrderSchema);
+const Order = mongoose.model("Order", OrderSchema);
 
 export default Order;
