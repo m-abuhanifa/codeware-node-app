@@ -4,13 +4,9 @@ const OrderItemsSchema = new Schema({
   products: [
     {
       product: String,
-      required: true,
+      quantity: Number,
     },
   ],
-  quantity: {
-    type: Number,
-    required: true,
-  },
 });
 
 const OrderItems = mongoose.model("OrderItems", OrderItemsSchema);
