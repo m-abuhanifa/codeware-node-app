@@ -9,7 +9,7 @@ interface FolderType extends Document {
 const FolderSchema: Schema = new Schema({
   name: { type: String, required: true },
   parent: { type: Schema.Types.ObjectId, ref: "Folder" },
-  children: [{ type: Schema.Types.ObjectId, ref: "Folder" }],
+  children: [{ type: Schema.Types.ObjectId, ref: "Child" }],
 });
 
 const Folder = mongoose.model<FolderType>("Folder", FolderSchema);
