@@ -23,7 +23,11 @@ export const getOrders = async (req: Request, res: Response) => {
 export const createOrderItems = async (req: Request, res: Response) => {
   try {
     const orderItems = await OrderItems.create(req.body);
-    res.json(orderItems);
+    res.json({
+      message: "Order Items Created",
+      data: orderItems,
+      success: true,
+    });
   } catch (error) {
     res.json({ message: error });
   }

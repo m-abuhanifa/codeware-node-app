@@ -16,6 +16,8 @@ export const createFolder = async (req: Request, res: Response) => {
 export const getFolders = async (req: Request, res: Response) => {
   try {
     const data = await Folder.find().populate("children").populate("children");
+    const d = await Child.find().populate("children").populate("children");
+    const t = await Grand.find().populate("children").populate("children");
     res.json({ message: "Folder created", data: data });
   } catch (error) {
     res.json({ status: "error", message: error });

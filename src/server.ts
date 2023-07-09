@@ -2,7 +2,7 @@ import cors from "cors";
 import express from "express";
 import connectDB from "./config/db";
 import folderRoute from "./routes/folderRoute";
-import router from "./routes/orderRoute";
+import orderRouter from "./routes/orderRoute";
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use("/api", folderRoute);
 
-app.use("/api/order", router);
+app.use("/api/orders", orderRouter);
 
 //mongoDB connection
 
